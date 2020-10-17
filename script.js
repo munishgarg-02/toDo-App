@@ -11,7 +11,7 @@ $(()=>{
             let item  = $('<li>',{
                 'class':'list-group-item bg-transparent',
                 text: inptask.val(),
-                style: 'font-weight:bold'
+                style: 'font-weight:bold;font-size:large'
             })
             $('#ultasks').append(item)
             inptask.val('')
@@ -21,7 +21,7 @@ $(()=>{
             let item  = $('<li>',{
                 'class':'list-group-item bg-transparent',
                 text: inptask.val() + "( " + inpdatetime.val() + " )",
-                style: 'font-weight:bold'
+                style: 'font-weight:bold;font-size:large'
             })
             $('#ultasks').append(item)
             inptask.val('')
