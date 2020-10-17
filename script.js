@@ -4,14 +4,17 @@ $(()=>{
     let btnreset = $('#btnreset')
     let btnsort = $('#btnsort')
     let inptask = $('#inptask')
+    let inpdatetime = $('#inpdatetime')
 
     function addItems(){
         let item = $('<li>',{
             'class':'list-group-item',
-            text:inptask.val()
+            text: inptask.val() + "( " + inpdatetime.val() + " )"
         })
         $('#ultasks').append(item)
         inptask.val('')
+        inpdatetime.val('')
+        btnadd.prop('disabled',inptask.val()=='')
     }
 
     btnadd.click(addItems)
