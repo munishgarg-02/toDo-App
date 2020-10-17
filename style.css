@@ -1,5 +1,6 @@
 .toggle{
-    color: red;
+    text-decoration: line-through;
+    color:gray;
 }
 
 h1{

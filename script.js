@@ -64,4 +64,15 @@ $(()=>{
     btnsort.click(()=>{
         $('.toggle').appendTo('#ultasks')
     })
+
+    inpdatetime.keypress((e)=>{
+        if(e.keyCode==13){
+            if(inptask.val()==''){
+                alert('Enter the task first!!!')
+            }
+            else{
+                addItems();
+            }
+        }
+    })
 })
