@@ -1,5 +1,4 @@
 .toggle{
-    text-decoration: line-through;
     color:gray;
 }
 
@@ -14,6 +13,6 @@ h2{
 }
 
 body{
-    background: url('/assets/todo.jpg') fixed no-repeat;
+    background: url('/assets/todolist2.jpg') fixed no-repeat;
     background-size: cover;
 }

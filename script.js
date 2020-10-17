@@ -9,7 +9,7 @@ $(()=>{
     function addItems(){
         if(inpdatetime.val()==''){
             let item  = $('<li>',{
-                'class':'list-group-item bg-transparent',
+                'class':'list-group-item bg-transparent border-0',
                 text: inptask.val(),
                 style: 'font-weight:bold;font-size:large'
             })
@@ -18,9 +18,12 @@ $(()=>{
             inpdatetime.val('')
         }
         else{
+            let x = inpdatetime.val()
+            let date = x.substring(0,x.indexOf('T'))
+            let time = x.substring(x.indexOf('T')+1, x.length)
             let item  = $('<li>',{
-                'class':'list-group-item bg-transparent',
-                text: inptask.val() + "( " + inpdatetime.val() + " )",
+                'class':'list-group-item bg-transparent border-0',
+                text: inptask.val() + " on " + date + " at " + time,
                 style: 'font-weight:bold;font-size:large'
             })
             $('#ultasks').append(item)
@@ -55,6 +58,7 @@ $(()=>{
 
     $('#ultasks').click((e)=>{
         $(e.target).toggleClass('toggle')
+        $(e.target).css('content',$(e.target).text() + '(done)')
     })
 
     btndelete.click(()=>{
