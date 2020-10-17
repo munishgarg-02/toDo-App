@@ -45,7 +45,14 @@ $(()=>{
         inptask.val('')
     }
 
-    btnreset.click(clear)
+    btnreset.click(()=>{
+        if(inptask.val()==''){
+            alert('The input box is already clear!!')
+        }
+        else{
+            clear()
+        }
+    })
 
     inptask.keypress((e)=>{
         if(inptask.val()!='' && e.keyCode==13){
@@ -62,11 +69,21 @@ $(()=>{
     })
 
     btndelete.click(()=>{
-        $('li').remove()
+        if($('li').length==0){
+            alert('First add certain items!!')
+        }
+        else{
+            $('li').remove()
+        }
     })
 
     btnsort.click(()=>{
-        $('.toggle').appendTo('#ultasks')
+        if($('li').length==0){
+            alert('First add certain items!!')
+        }
+        else{
+            $('.toggle').appendTo('#ultasks')
+        }
     })
 
     inpdatetime.keypress((e)=>{
