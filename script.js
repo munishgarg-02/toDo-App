@@ -7,14 +7,26 @@ $(()=>{
     let inpdatetime = $('#inpdatetime')
 
     function addItems(){
-        let item = $('<li>',{
-            'class':'list-group-item bg-transparent',
-            text: inptask.val() + "( " + inpdatetime.val() + " )",
-            style: 'font-weight:bold;color:green'
-        })
-        $('#ultasks').append(item)
-        inptask.val('')
-        inpdatetime.val('')
+        if(inpdatetime.val()==''){
+            let item  = $('<li>',{
+                'class':'list-group-item bg-transparent',
+                text: inptask.val(),
+                style: 'font-weight:bold'
+            })
+            $('#ultasks').append(item)
+            inptask.val('')
+            inpdatetime.val('')
+        }
+        else{
+            let item  = $('<li>',{
+                'class':'list-group-item bg-transparent',
+                text: inptask.val() + "( " + inpdatetime.val() + " )",
+                style: 'font-weight:bold'
+            })
+            $('#ultasks').append(item)
+            inptask.val('')
+            inpdatetime.val('')
+        }
     }
 
     btnadd.click(()=>{
