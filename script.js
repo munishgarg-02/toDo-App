@@ -8,16 +8,23 @@ $(()=>{
 
     function addItems(){
         let item = $('<li>',{
-            'class':'list-group-item',
-            text: inptask.val() + "( " + inpdatetime.val() + " )"
+            'class':'list-group-item bg-transparent',
+            text: inptask.val() + "( " + inpdatetime.val() + " )",
+            style: 'font-weight:bold;color:green'
         })
         $('#ultasks').append(item)
         inptask.val('')
         inpdatetime.val('')
-        btnadd.prop('disabled',inptask.val()=='')
     }
 
-    btnadd.click(addItems)
+    btnadd.click(()=>{
+        if(inptask.val()!=''){
+            addItems();
+        }
+        else{
+            alert('Enter the task first!')
+        }
+    })
 
     function clear(){
         inptask.val('')
@@ -26,8 +33,11 @@ $(()=>{
     btnreset.click(clear)
 
     inptask.keypress((e)=>{
-        if(e.keyCode==13){
+        if(inptask.val()!='' && e.keyCode==13){
             addItems()
+        }
+        else if(e.keyCode==13 && inptask.val()==''){
+            alert('Enter the task first!!')
         }
     })
 

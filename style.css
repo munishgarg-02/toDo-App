@@ -4,9 +4,15 @@
 
 h1{
     font-family: 'Times New Roman', Times, serif;
+    color: red;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
 }
 
 body{
-    background: url('/assets/') fixed no-repeat;
+    background: url('/assets/todo.jpg') fixed no-repeat;
     background-size: cover;
 }
